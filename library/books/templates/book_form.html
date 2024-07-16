@@ -1,17 +1,18 @@
+
 {% extends "master.html" %}
 
 {% block title %}
-  Home
+  BookForm
 {% endblock %}
 
 
 {% block content %}
-  <h1>Book form</h1>
-  
-  <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit"> Save</button>
-  </form>
 
+<h1>{% if object %}Edit Book{% else %}Add New Book{% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'book_list' %}">Back to Book List</a>
 {% endblock %}
