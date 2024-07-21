@@ -126,5 +126,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#doplnit cesty
+LOGIN_REDIRECT_URL = 'profile'
+LOGIN_URL = 'login'
 

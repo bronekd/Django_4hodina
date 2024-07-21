@@ -1,13 +1,12 @@
 {% extends "master.html" %}
 
-{% block title %}
-  Login
-{% endblock %}
-
-
 {% block content %}
-  <h1>Login</h1>
-  
-  <p>Tady je nějaký text na Home</p>
-
-{% endblock %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <small>
+        Need An Account? <a href="{% url 'register' %}">Sign Up Now</a>
+    </small>
+{% endblock content %}
